@@ -20,6 +20,10 @@ aliasRewrites:
 
 smartHosts:
     driver = manualroute
+    <%- if @host_in_subject -%>
+    headers_remove = subject
+    headers_add = Subject: [<%= @hostname -%>] $h_subject
+    <%- end -%>
     transport = remote_smtp
     route_data = <%= @smarthost %>
 
