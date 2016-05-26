@@ -26,6 +26,7 @@ class eximsimple (
   $root = $eximsimple::params::root,
   $package_name = $eximsimple::params::package_name,
   $service_name = $eximsimple::params::service_name,
+  $host_in_subject = $eximsimple::params::host_in_subject,
 ) inherits ::eximsimple::params {
 
   package { 'postfix':

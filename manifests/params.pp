@@ -24,6 +24,7 @@ class eximsimple::params {
     $domain = 'example.com'
     $local_interfaces = '127.0.0.1'
     $root = 'root@example.com'
+    $host_in_subject = false
 
     case $::osfamily {
       'RedHat': {

@@ -79,6 +79,14 @@ The host to send all mail via. Can be any valid format that Exim accepts. e.g. `
 
 The interface to listen on. Defaults to `127.0.0.1`.
 
+####`host_in_subject`
+
+This tells exim to rewrite the subject line so that the sending host is identified at the begining
+of the subject header. 
+
+It rewrites in the form of [$hostname] $Original subject. $hostname is using the factor hostname 
+variable available to puppet.
+
 ## Limitations
 
 This module has only been tested on the following Operating Systems:
