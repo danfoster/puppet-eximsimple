@@ -77,7 +77,7 @@ The host to send all mail via. Can be any valid format that Exim accepts. e.g. `
 
 ####`local_interfaces`
 
-The interface to listen on. Defaults to `127.0.0.1`.
+The interface to listen on. Defaults to `localhost`.
 
 ####`host_in_subject`
 
