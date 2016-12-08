@@ -5,12 +5,16 @@ ignore_bounce_errors_after = 2d
 local_interfaces = <%= @local_interfaces %>
 
 acl_smtp_connect = acl_check_connection
+acl_smtp_rcpt = acl_check_receipt
 
 begin acl
 
 acl_check_connection:
     accept hosts = <%= @local_interfaces %>
     drop message = You are not permitted to connect to this service
+
+acl_check_receipt:
+    accept hosts = localhost
 
 begin routers
 
