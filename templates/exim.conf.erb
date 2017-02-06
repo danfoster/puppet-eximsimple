@@ -5,6 +5,8 @@ ignore_bounce_errors_after = 2d
 <% if @local_interfaces != '' %>local_interfaces = <%= @local_interfaces %>
 <% end -%>
 
+smtp_accept_max_per_connection = 15000
+
 acl_smtp_connect = acl_check_connection
 acl_smtp_rcpt = acl_check_receipt
 
