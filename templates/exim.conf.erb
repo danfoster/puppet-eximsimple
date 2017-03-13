@@ -2,15 +2,22 @@ qualify_domain = <%= @domain %>
 never_users = root
 deliver_drop_privilege = true
 ignore_bounce_errors_after = 2d
-local_interfaces = <%= @local_interfaces %>
+<% if @local_interfaces != '' %>local_interfaces = <%= @local_interfaces %>
+<% end -%>
+
+smtp_accept_max_per_connection = 15000
 
 acl_smtp_connect = acl_check_connection
+acl_smtp_rcpt = acl_check_receipt
 
 begin acl
 
 acl_check_connection:
-    accept hosts = <%= @local_interfaces %>
+    accept hosts = <%= @accept_hosts %>
     drop message = You are not permitted to connect to this service
+
+acl_check_receipt:
+    accept hosts = <%= @accept_hosts %>
 
 begin routers
 

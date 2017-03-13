@@ -22,7 +22,8 @@
 class eximsimple::params {
     $smarthost = 'smtp.example.com/mx'
     $domain = 'example.com'
-    $local_interfaces = 'localhost'
+    $local_interfaces = '127.0.0.1' 
+    $accept_hosts = 'localhost'
     $root = 'root@example.com'
     $host_in_subject = false
 
